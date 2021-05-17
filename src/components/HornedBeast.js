@@ -12,6 +12,7 @@ class HornedBeast extends React.Component {
             numberOfPat: 0,
         }
     }
+    
 
     addNumberOfPat = () => {
         this.setState({
