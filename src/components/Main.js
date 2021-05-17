@@ -9,11 +9,12 @@ class Main extends React.Component {
 
     render() {
         return (
-         <>
-                {hornsData.map(item => {
+            <>
+                {hornsData.map((item, idx) => {
 
                     return (
                         <HornedBeast
+                            key={idx}
                             title={item.title}
                             imgsrc={item.image_url}
                             description={item.description}
