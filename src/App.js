@@ -2,20 +2,59 @@ import React from 'react';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import Main from './components/Main';
+import SelectedBeast from './components/SelectedBeast';
+import hornsData from './components/data.json';
 
 
-class App extends React.Component{
+class App extends React.Component {
 
-  render(){
+  
+  constructor(props) {
+    super(props)
 
-    return(
+    this.state = {
+      hornedData: hornsData,
+      show: false,
+      selectedAnimal: {}
+    }
+  }
+
+  handleClose = () => {
+    this.setState = ({
+      show: false
+    })
+  }
+
+  renderingSelectedAnimal = (title) => {
+
+    let selectedAnimal = hornsData.find(beast => {
+
+      if (beast.title === title) {
+        return beast
+
+      }
+
+    })
+
+    this.setState({
+      show: true,
+      selectedAnimal: selectedAnimal
+    })
+
+  }
+
+  render() {
+
+    return (
       <div>
-        <Header/>
-        <Main/>
-        <Footer/>
+        <Header />
+        <Main hornedData={this.state.hornedData} renderingSelectedAnimal={this.renderingSelectedAnimal} />
+        <SelectedBeast show={this.state.show} selectedAnimal={this.state.selectedAnimal} handleClose={this.handleClose} />
+        <Footer />
       </div>
     )
   }
 }
+
 
 export default App;
