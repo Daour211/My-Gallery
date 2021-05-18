@@ -6,9 +6,9 @@ import Card from 'react-bootstrap/Card'
 
 class SelectedBeast extends React.Component{
     
-  handleClose = () => {
-    this.props.handleClose()
-  }
+  // handleClose = () => {
+  //   this.props.handleClose()
+  // }
 
     render(){
 
@@ -16,7 +16,8 @@ class SelectedBeast extends React.Component{
 
         return(
 
-             <Modal show={this.props.show} onHide={this.handleClose}>
+             <Modal show={this.props.show} onHide={this.props.handleClose}>
+              
                     <Modal.Header closeButton>
 
                     
@@ -26,11 +27,12 @@ class SelectedBeast extends React.Component{
                     <Card.Img  variant="top" src={this.props.selectedAnimal.image_url} />
                     <Modal.Body>{this.props.selectedAnimal.description}</Modal.Body>
                     <Modal.Footer>
-                      <Button variant="secondary" onClick={this.props.handleClose}>
+                      <Button variant="primary" onClick={this.props.handleClose}>
                         Close
                       </Button>
                       
                     </Modal.Footer>
+                    
                   </Modal> 
         )
 
