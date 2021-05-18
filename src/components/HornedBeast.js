@@ -10,16 +10,23 @@ class HornedBeast extends React.Component {
         super(props)
         this.state = {
             numberOfPat: 0,
+
+            
         }
     }
-    
+
+     
 
     addNumberOfPat = () => {
         this.setState({
             numberOfPat: this.state.numberOfPat + 1,
-        })
-    }
-
+            
+    })
+    
+}
+renderingSelectedAnimal = () => {
+    this.props.renderingSelectedAnimal(this.props.title)
+}
 
 
     render() {
@@ -35,13 +42,13 @@ class HornedBeast extends React.Component {
             // </div>
 
             <Card style={{ width: '18rem' }}>
-                <Card.Img variant="top" src={this.props.imgsrc} />
+                <Card.Img  onClick={this.renderingSelectedAnimal}  variant="top" src={this.props.imgsrc} />
                 <Card.Body>
                     <Card.Title>{this.props.title}</Card.Title>
                     <Card.Text>
                     😸Number of Pats: {this.state.numberOfPat} 
                     </Card.Text>
-                    <Button onClick={this.addNumberOfPat} variant="primary">pick</Button>
+                    <Button  onClick={this.addNumberOfPat}variant="primary">pick</Button>
                 </Card.Body>
             </Card>
         )
