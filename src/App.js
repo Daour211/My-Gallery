@@ -44,12 +44,19 @@ class App extends React.Component {
 
   }
 
+  renderingFilteredBeast = (value)=>{
+    this.setState ({
+      hornedData: value
+    })
+
+  }
+
   render() {
 
     return (
       <div>
         <Header />
-        <Main hornedData={this.state.hornedData} renderingSelectedAnimal={this.renderingSelectedAnimal} />
+        <Main hornedData={this.state.hornedData} renderingSelectedAnimal={this.renderingSelectedAnimal}   renderingFilteredBeast={this.renderingFilteredBeast}/>
         <SelectedBeast show={this.state.show} selectedAnimal={this.state.selectedAnimal} 
         handleClose={this.hideModal} />
         <Footer />
