@@ -2,6 +2,7 @@ import React from 'react';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Card from 'react-bootstrap/Card'
+
 import Button from 'react-bootstrap/Button'
 
 class HornedBeast extends React.Component {
@@ -41,7 +42,8 @@ renderingSelectedAnimal = () => {
             //     <p> 😸{this.state.numberOfPat} </p>
             // </div>
 
-            <Card style={{ width: '18rem', display:'inline-block' }}>
+           
+            <Card style={{ width: '18rem', }}>
                 <Card.Img  onClick={this.renderingSelectedAnimal}  variant="top" src={this.props.imgsrc} />
                 <Card.Body>
                     <Card.Title>{this.props.title}</Card.Title>
@@ -51,6 +53,7 @@ renderingSelectedAnimal = () => {
                     <Button  onClick={this.addNumberOfPat}variant="primary">pick</Button>
                 </Card.Body>
             </Card>
+
         )
     }
 

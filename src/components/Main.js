@@ -3,24 +3,26 @@ import HornedBeast from './HornedBeast'
 import Form from 'react-bootstrap/Form'
 import hornsData from './data.json'
 
+import CardColumns from 'react-bootstrap/CardColumns'
+
 
 
 class Main extends React.Component {
 
     constructor(props) {
         super(props)
-        
+
     }
 
     numberOfHorns = (event) => {
         let numberOfHorns = parseInt(event.target.value)
-        let yy ;
+        let yy;
 
-        
+
         console.log(numberOfHorns);
 
-        if (numberOfHorns ) {
-             yy = hornsData.filter((item) => {
+        if (numberOfHorns) {
+            yy = hornsData.filter((item) => {
 
                 if (numberOfHorns == item.horns) {
                     return item
@@ -29,7 +31,7 @@ class Main extends React.Component {
 
             })
             // console.log(yy);
-        }else{
+        } else {
             yy = hornsData
         }
 
@@ -42,7 +44,7 @@ class Main extends React.Component {
 
 
     render() {
-      
+
         return (
             <>
                 < Form >
@@ -60,6 +62,8 @@ class Main extends React.Component {
                     </Form.Group>
                 </Form >
 
+                <CardColumns>
+
                 { this.props.hornedData.map((item, idx) => {
 
                     return (
@@ -76,6 +80,7 @@ class Main extends React.Component {
                 })
 
                 }
+                </CardColumns>
                 {/* { this.state.newArr.forEach((item, idx) => {
                     return (
                         <HornedBeast
