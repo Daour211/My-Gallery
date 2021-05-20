@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
@@ -33,14 +34,14 @@ class HornedBeast extends React.Component {
             //     <p> 😸{this.state.numberOfPat} </p>
             // </div>
 
-            <Card style={{ width: '18rem' }}>
-                <Card.Img variant="top" src={this.props.imgsrc} />
+            <Card  style={{ width: '18rem' }}>
+                <Card.Img  onClick={this.addNumberOfPat} variant="top" src={this.props.imgsrc} />
                 <Card.Body>
                     <Card.Title>{this.props.title}</Card.Title>
                     <Card.Text>
                     😸Number of Pats: {this.state.numberOfPat} 
                     </Card.Text>
-                    <Button onClick={this.addNumberOfPat} variant="primary">pick</Button>
+                    {/* <Button onClick={this.addNumberOfPat} variant="primary">pick</Button> */}
                 </Card.Body>
             </Card>
         )

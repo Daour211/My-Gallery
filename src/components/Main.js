@@ -13,7 +13,7 @@ class Main extends React.Component {
                 {hornsData.map(item => {
 
                     return (
-                        <HornedBeast
+                        <HornedBeast className= 'img'
                             title={item.title}
                             imgsrc={item.image_url}
                             description={item.description}
