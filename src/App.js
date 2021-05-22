@@ -19,10 +19,11 @@ class App extends React.Component {
     }
   }
 
-  handleClose = () => {
-    this.setState = ({
-      show: false
-    })
+  hideModal = () => {
+    this.setState({ 
+      show: false, 
+      selectedAnimal: {}
+     });
   }
 
   renderingSelectedAnimal = (title) => {
@@ -49,7 +50,8 @@ class App extends React.Component {
       <div>
         <Header />
         <Main hornedData={this.state.hornedData} renderingSelectedAnimal={this.renderingSelectedAnimal} />
-        <SelectedBeast show={this.state.show} selectedAnimal={this.state.selectedAnimal} handleClose={this.handleClose} />
+
+        <SelectedBeast show={this.state.show} selectedAnimal={this.state.selectedAnimal} handleClose={this.hideModal} />
         <Footer />
       </div>
     )
